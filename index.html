@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+<title>Learnerator</title>
+
+<!-- fonts -->
+<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+<!-- css -->
+<link href="css/normalize.css" rel="stylesheet" type="text/css" />
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 8]>
+    <script src="js/html5shiv.js"></script>
+    <link href="css/ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+
+<body>
+
+<section id="top">
+    <header class="cf">
+        <div class="floatLeft">
+            <img src="img/learnerator-logo.png" alt="Learnerator logo">
+        </div>
+        <div class="floatRight">
+            <ul>
+                <li>Leaderboard</li>
+                <li>Sign In</li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="quiz" class="cf">
+        <div id="quizIntro" class="textRight">
+            <h2>Score Higher</h2>
+            <p>Get an unfair advantage on your exams with hundreds of practice questions, explanations &amp; more.</p>
+            <ul>
+                <li>Get Started</li>
+                <li>See Courses</li>
+            </ul>
+            <div class="cf">
+                <div class="floatLeft width40">
+                    <img class="floatRight" src="img/notepad.png">23,098<br />questions
+                </div>
+                <div class="floatRight width60">
+                    <img class="floatRight" src="img/clipboard.png">2,618,225<br />questions answered
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="quizCard" class="cardBlueBkd cardInitial">
+        <div id="startScreen" class="cf">
+             <div class="floatLeft width70">
+                <p>Are you up to the Learnerator challenge?</p>
+                <p>Try a few sample questions, or choose a category.</p>
+                <button id="random">Try a Question</button>
+            </div>
+            <div id="categories" class="floatRight width30">
+                <button data-category="1" class="cat">AP Exams</button>
+                <button data-category="2" class="cat">College Entrance</button>
+                <button data-category="3" class="cat">Graduate Exams</button>
+                <button data-category="4" class="cat">Certifications</button>
+                <button data-category="5" class="cat">Literature</button>
+            </div>
+        </div>
+
+        <div id="cardHeader" class="cf">
+            <div id="progress" class="floatLeft width50">
+                <p>Question <span class="questionNumber"></span> out of 5</p>
+            </div>
+            <div id="close" class="floatRight width50 textRight">
+                <p>Close X</p>
+            </div>
+        </div> 
+
+        <div id="questionScreen">  
+            <div id="question">
+            </div>
+            <div id="answers">
+            </div>
+            <div id="error">
+            </div>
+            <div class="cardButtons">
+                <button id="skip" class="orangeBkgd">Skip</button>
+                <button id="submit" class="greenBkgd">Submit</button>
+            </div>    
+        </div>
+
+        <div id="resultScreen">
+            <div id="questionResult">
+            </div>
+            <div class="cardButtons">
+                <button id="next" class="greenBkgd"></button>
+            </div>     
+        </div>
+
+        <div id="scorecardScreen" class="cf">
+            <div id="summary" class="floatLeft width50">
+                <h3>Here are your results:</h3>
+                <div id="totalCorrect">
+                    <p>Your number of correct answers is: <span class="correctAnswers"></span> <span class="correctFraction"></span>/5</p>
+                </div>
+                <div id="totalWrong">
+                    <p>Your number of wrong answers is: <span class="wrongAnswers"></span> <span class="wrongFraction"></span>/5</p>
+                </div>
+                <div id="totalSkipped">
+                    <p>Your number of skipped questions is: <span class="skippedQuestions"></span> <span class="skippedFraction"></span>/5</p>
+                </div>
+                <div id="totalScore">
+                    <p>Your total score is <span class="scoreBackground"></span></p>
+                </div>
+            </div>
+            <div id="share" class="floatRight width50">
+                <p>Want to share the score with your friends?</p>
+                <p><button class="social twitter"><i class="fa fa-twitter"></i>Tweet</button>
+                <button class="social facebook"><i class="fa fa-facebook"></i>Like</button>
+                <button class="social google"><i class="fa fa-google-plus"></i>1+</button>
+                <button class="social email"><i class="fa fa-envelope"></i>Email</button>
+                </p>
+                <div class="cardButtons">
+                    <button id="restart" class="orangeBkgd">Try Another</button>
+                    <button id="signUp" class="greenBkgd">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="topBorder" class="cf">
+    <div class="borderBar tealBkgd"></div>
+    <div class="borderBar lightTealBkgd"></div>
+    <div class="borderBar orangeBkgd"></div>
+    <div class="borderBar lightOrangeBkgd"></div>
+    <div class="borderBar greenBkgd"></div>
+    <div class="borderBar lightGreenBkgd"></div>
+    <div class="borderBar lightPurpleBkgd"></div>
+    <div class="borderBar purpleBkgd"></div>
+    <div class="borderBar lightYellowBkgd"></div>
+    <div class="borderBar yellowBkgd"></div>
+    <div class="borderBar lightAquaBkgd"></div>
+    <div class="borderBar aquaBkgd"></div>
+</div>
+
+<section id="courses">
+    <div id="courseList" class="cf">
+        <div class="courseColumn">
+            <h3 class="courseHeader apLink">AP Exams</h3>
+            <p class="ap"><span class="courseTitle">AP Art History</span></p>
+            <p class="ap"><span class="courseTitle">AP Biology</span></p>
+            <p class="ap"><span class="courseTitle">AP Calculus AB/BC</span></p>
+            <p class="ap"><span class="courseTitle">AP Chemistry</span></p>
+            <p class="ap"><span class="courseTitle">AP Comp. Govt.</span></p>
+            <p class="ap"><span class="courseTitle">AP English Language</span></p>
+            <p class="ap"><span class="courseTitle">AP English Literature</span></p>
+            <p class="ap"><span class="courseTitle">AP Env. Science</span></p>
+            <p class="ap"><span class="courseTitle">AP European History</span></p>
+            <p class="ap"><span class="courseTitle">AP Human Geography</span></p>
+            <p class="ap"><span class="courseTitle">AP French Language</span></p>
+            <p class="ap"><span class="courseTitle">AP Macroeconomics</span></p>
+        </div>
+        <div class="courseColumn columnSpacer">
+            <p class="ap"><span class="courseTitle">AP Microeconomics</span></p>
+            <p class="ap"><span class="courseTitle">AP Music Theory</span></p>
+            <p class="ap"><span class="courseTitle">AP Physics 1&amp;2</span></p>
+            <p class="ap"><span class="courseTitle">AP Physics C: E&amp;M</span></p>
+            <p class="ap"><span class="courseTitle">AP Physics C: Mechanics</span></p>
+            <p class="ap"><span class="courseTitle">AP Psychology</span></p>
+            <p class="ap"><span class="courseTitle">AP Span Lang</span></p>
+            <p class="ap"><span class="courseTitle">AP Span Lit</span></p>
+            <p class="ap"><span class="courseTitle">AP Statistics</span></p>
+            <p class="ap"><span class="courseTitle">AP US Govt &amp; Pol</span></p>
+            <p class="ap"><span class="courseTitle">AP US History</span></p>
+            <p class="ap"><span class="courseTitle">AP World History</span></p>
+        </div>
+        <div class="courseColumn">
+            <h3 class="courseHeader ceLink">College Entrance</h3>
+            <p class="ce"><span class="courseTitle">ACT&#8212;Reading</span></p>
+            <p class="ce"><span class="courseTitle">ACT&#8212;Math</span></p>
+            <p class="ce"><span class="courseTitle">ACT&#8212;Science</span></p>
+            <p class="ce"><span class="courseTitle">ACT&#8212;English</span></p>
+            <p class="ce"><span class="courseTitle">SAT&#8212;Int. Reading &amp; Wr.</span></p>
+            <p class="ce"><span class="courseTitle">SAT&#8212;Math</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;Biology</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;Chemistry</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;French</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;Literature</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;Math 1&amp;2</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;Physics</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;US History</span></p>
+            <p class="ce"><span class="courseTitle">SAT ST&#8212;World History</span></p>
+        </div>
+        <div class="courseColumn">
+            <h3 class="courseHeader geLink">Graduate Exams</h3>
+            <p class="ge"><span class="courseTitle">GMAT&#8212;Int. Reasoning</span></p>
+            <p class="ge"><span class="courseTitle">GMAT&#8212;Quantitative</span></p>
+            <p class="ge"><span class="courseTitle">GMAT&#8212;Verbal</span></p>
+            <p class="ge"><span class="courseTitle">GRE&#8212;Quantitative</span></p>
+            <p class="ge"><span class="courseTitle">GRE&#8212;Verbal</span></p>
+            <h3 class="courseHeader certifications certLink">Certifications</h3>
+            <p class="cert"><span class="courseTitle">EMT</span></p>
+            <p class="cert"><span class="courseTitle">GED</span></p>
+            <p class="cert"><span class="courseTitle">PTCE</span></p>
+            <p class="cert"><span class="courseTitle">TEAS</span></p>
+        </div>
+    </div>
+
+    <div id="moreInfo">
+        <p><em>Interested in a school license? We offer discounted rates for schools and teachers.</em></p>
+        <button>Learn More</button>
+    </div>
+</section>
+
+<footer class="cf">
+    <div class="floatLeft width50">
+        <img src="img/learnerator-logo.png">
+        <p>Learnerator is the best place to perfect your knowledge of advanced academic subjects. We have thousands of practice questions with solutions to give you all the practice you need while making it fun at the same time.</p>
+    </div>
+
+    <div class="floatRight width50">
+        <p><a href="#">About Us</a> <span class="pipe">|</span> <a href="#">Blog</a> <span class="pipe">|</span> <a href="#">Terms &amp; Copyright</a> <span class="pipe">|</span> <a href="#">Testimonials</a> <span class="pipe">|</span> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-youtube-play"></i></a></p>
+        <button>School Licenses</button> <img src="img/heap-logo.png"> <img src="img/rackspace-logo.png">
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="js/handlebars-v2.0.0.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/templates.js"></script>
+
+</body>
+</html>
